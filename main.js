@@ -47,6 +47,9 @@ const setText = (text) => {
 const displayText = (items) => {
   // Rejoin text that we split up below
   let text = splitKeys.map(i => items['text' + i]).filter(t => t).join();
+  if(text === editor.innerHTML) {
+    return;
+  }
   editor.innerHTML = text;
 }
 
